@@ -83,7 +83,7 @@ public class ls extends JavaPlugin{
 			log.info("[LoginSecurity] Failed sending stats to mcstats.org");
 		}
 		
-		for(Player player : Bukkit.getServer().getOnlinePlayers()) {
+		for(Player player : Bukkit.getOnlinePlayers()) {
 			this.onlinePlayers.add(player.getName());
 		}
 	}
@@ -129,7 +129,7 @@ public class ls extends JavaPlugin{
 	}
 	
 	public final void handleTick() {
-			for(Player player : Bukkit.getServer().getOnlinePlayers()) {
+			for(Player player : Bukkit.getOnlinePlayers()) {
 				String pname = player.getName();
 				if(invalid.contains(pname))
 				{
@@ -151,7 +151,7 @@ public class ls extends JavaPlugin{
 	
 	public static void setLockDown(boolean value) {
 		if(value) {
-			for(Player player : Bukkit.getServer().getOnlinePlayers()) {
+			for(Player player : Bukkit.getOnlinePlayers()) {
 				player.kickPlayer("We are currently undergoing SQL problems");
 			}
 		}
